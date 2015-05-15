@@ -1,0 +1,32 @@
+#menu{
+	font-family:'Hiragino Sans GB',\5FAE\8F6F\96C5\9ED1,sans-serif;
+	font-size:14.3px;line-height:19px;color:#000;
+	position:absolute;position:fixed;z-index:9;margin:-5px 0 0 0;
+	min-width:180px;min-height:20px;padding:4px 0;
+	background:#FFF;background:rgba(255,255,255,.97);
+	box-shadow:4px 4px 8px rgba(0,0,0,.15);
+	border:1px solid rgba(50,50,50,.2);
+	border-radius:5px;}
+#menu.h{opacity:0;display:none;}
+
+#menu a{display:block;padding:0 12px 0 20px;
+	cursor:pointer;}
+#menu a span{float:right;text-transform:capitalize;
+	font-family:'Courier New','Lucida Console',monospace;
+	font-size:.9em;
+	font-weight:bold;opacity:.5;margin-left:10px;}
+#menu a:hover{background:#37F;color:#FFF;
+	background:linear-gradient(#37F 0,#58F 8%,#37F 50%,#26F 92%,#04E 100%);}
+#menu hr{
+	margin:7px 1px;
+	border:0 none;
+	border-top:1px solid #EEE;}
+
+[select="none"]{
+	moz-user-select:-moz-none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;}

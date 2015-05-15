@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>右键菜单</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=940">
+<link rel="stylesheet" href="imenu.css">
+<style>
+html,body{height:100%;}
+</style>
+
+<h1>Menu 右键菜单库</h1>
+<p> 这是一个 JavaScript 的邮件菜单类，通过它我们可以快速实现右键菜单。</p>
+<p>Menu 依托于 iTorr.js</p>
+
+<h2>你好，世界</h2>
+<p>如何快速添加右键菜单到网页中？</p>
+
+<div id="main">
+你好，世界
+</div>
+
+<script src="../itorr.m.js"></script><!-- iTorr.js 函数库 -->
+<script src="../itorr.menu.js"></script>
+<script>
+imenu.reg({
+	dom:$('div'),
+	menu:[
+		{
+			text:'暂停/播放',
+			func:function(){
+				alert('开始播放');
+			}
+		},{
+			type:'hr',
+		},{
+			text:'博客',
+			func:function(){
+				alert('博客');
+			}
+		},{
+			text:'关于',
+			func:function(){
+				alert('关于');
+			}
+		},
+	]
+});
+
+
+
+imenu.reg($('p'),{//通过 DOM 查找节点，遇到当前 DOM 的情况才会匹配
+	menu:[{
+		text:'什么情况',
+		func:function(){
+			alert('什么情况');
+		}
+	}]
+}).reg('i',{//通过 CSS 表达式查找节点，所有符合表达式的情况都会匹配
+	menu:[{
+		text:'??????',
+		func:function(o){
+		console.log(o);
+		}
+	}],
+	open:function(dom){//菜单被打开时的回调
+		console.log('菜单开启:',dom)
+	},close:function(dom){//菜单被关闭时的回调
+		console.log('菜单关闭:',dom)
+	}
+}).reg('b',{
+	menu:[{
+		text:'奇怪的标签 B'
+	}]
+})
+</script>

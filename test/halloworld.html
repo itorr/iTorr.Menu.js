@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../imenu.css">
+
+<h1>你好，世界</h1>
+
+<script src="../itorr.m.js"></script><!-- iTorr.js 函数库 -->
+<script src="../itorr.menu.js"></script><!--  Menu 类 -->
+<script>
+$.Menu.reg($('h1'),[ //右键菜单列表
+	{
+		text:'我是右键菜单第一项', //右键菜单文字内容
+		func:function(){ //回调函数
+			alert('回调成功');
+		}
+	}
+]);
+</script>

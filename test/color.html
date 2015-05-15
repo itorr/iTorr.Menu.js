@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../imenu.css">
+
+<h1>你好，世界</h1>
+<p> 我是段落1</p>
+<div id="id">
+	我是 <span>div</span> 里面的文本节点
+	<div class="class"> 我被点了应该会变色</div>
+</div>
+<span data-cid="123">奇怪的 data 标记</span>
+<script src="../itorr.m.js"></script><!-- iTorr.js 函数库 -->
+<script src="../itorr.menu.js"></script><!--  Menu 类 -->
+<script>
+$.Menu.reg('h1,span,#id>.class,[data-cid="123"]',[{
+		text:'卖个萌！点了我我就变色',
+		func:function(dom){
+			dom.css('background:red')
+		}
+}]);
+</script>

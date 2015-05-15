@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../imenu.css">
+
+<h1>你好，世界</h1>
+<p> 我是段落1</p>
+<script src="../itorr.m.js"></script><!-- iTorr.js 函数库 -->
+<script src="../itorr.menu.js"></script><!--  Menu 类 -->
+<script>
+var delDom=function(dom){//回调函数
+	dom.del();
+};
+
+$.Menu.reg($('h1'),[ //右键菜单列表
+	{
+		text:'我是右键菜单第一项', //右键菜单文字内容
+		func:function(){ //回调函数
+			alert('回调成功');
+		}
+	},{
+		text:'删除', //右键菜单文字内容
+		key:'Del', //快捷键提示 （不参与绑定，仅用来绑定）
+		func:delDom //绑定回调函数
+	},{
+		type:'hr'//这是一条分割线
+	},{
+		text:'我是菜单末尾',
+		key:'Ctrl+Q', //快捷键提示 （不参与绑定，仅用来绑定）
+		func:function(){
+			alert('回调成功2');
+		}
+	}
+]).reg('p',[{
+	text:'我是段落'
+}]);
+</script>
