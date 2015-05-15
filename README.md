@@ -2,7 +2,7 @@
 
 ![](http://ww4.sinaimg.cn/large/4764ae2ajw1es4ov0jrqcg20qc0enabo)
 
-　　这是一个 JavaScript 的邮件菜单类，通过它我们可以快速实现右键菜单。曾用于 [偷揉电台](http://itorr.sinaapp.com/fm) 等项目中，为方便今后使用、抽象成类以开源~
+　　这是一个 JavaScript 的右键菜单类，通过它我们可以快速实现右键菜单。曾用于 [偷揉电台](http://itorr.sinaapp.com/fm) 等项目中，为方便今后使用、抽象成类以开源~
 
 >Menu 依托于 iTorr.js
 
