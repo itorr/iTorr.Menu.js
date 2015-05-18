@@ -1,4 +1,4 @@
-window.iTorr?iTorr.Menu=function($,W,D){
+this.iTorr?iTorr.Menu=function($,W,D){
 	var 
 	body=D.body,
 	MENU=[],
@@ -11,6 +11,51 @@ window.iTorr?iTorr.Menu=function($,W,D){
 
 		if(now_m&&now_m.close)
 			now_m.close(now_dom);
+	},reDOM=function(O,menu){
+		var 
+		_o,
+		_li,
+		_a,
+		_b,
+		_span,
+		_ul;
+		menu.each(function(o){
+			if(!o)
+				return true
+
+			if(!o.type){
+				_o=$.D('li');
+				_a=$.D('a');
+				_b=$.D('b');
+
+				if(o.key){
+					_span=$.D('span');
+					_span.innerHTML=o.key;
+					_a.add(_span);
+				}
+
+				_b.innerHTML=o.text;
+				_a.add(_b);
+
+				if(o.func)
+					_a.func=o.func;
+
+
+				_o.add(_a);
+
+				if(o.child){
+					_o.className='menu-pa';
+					_ul=$.D('ul');
+					_ul.className='menu-child';
+					reDOM(_ul,o.child);
+					_o.add(_ul);
+				}
+			}else if(o.type=='hr'){
+				_o=$.D('hr');
+			}
+			O.add(_o);
+
+		});
 	},showM=function(e,m,dom){
 		e.stopPropagation();
 		e.preventDefault();
@@ -19,29 +64,10 @@ window.iTorr?iTorr.Menu=function($,W,D){
 		now_dom=dom;
 		dom.focus();
 
-		var _o;
 		O.innerHTML='';
-		m.menu.each(function(o){
-			if(!o)
-				return true
 
-			if(!o.type){
-				_o=$.D('a');
-				_o.innerHTML=o.text;
-				if(o.func)
-					_o.func=o.func;
+		reDOM(O,m.menu);
 
-				if(o.key){
-					var span=$.D('span');
-					span.innerHTML=o.key;
-					_o.add(span);
-				}
-			}else if(o.type=='hr'){
-				_o=$.D('hr');
-			}
-			O.add(_o);
-
-		});
 
 		if(m.open){
 			m.open(dom);
@@ -72,7 +98,7 @@ window.iTorr?iTorr.Menu=function($,W,D){
 	};
 
 	var
-	O=D.createElement('div');
+	O=D.createElement('ul');
 	O.className='h';
 	O.id='menu';
 	body.appendChild(O);
@@ -106,7 +132,7 @@ window.iTorr?iTorr.Menu=function($,W,D){
 				}
 			}))
 				break;
-			
+			console.log(o)
 			o=o.parentNode;
 		};
 	};
