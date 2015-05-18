@@ -174,3 +174,27 @@ $.Menu.del($('h1'));
 ```javascript
 $.Menu.del('span');
 ```
+
+
+##多级菜单（140517）
+
+添加多级菜单支持，格式如下
+
+```javascript
+$.Menu.reg('span',[{
+	text:'我是大标题'
+	child:[{
+		text:'我是子菜单'
+	},{
+		text:'我是子菜单2',
+		func:function(){
+			alert('子菜单回调');
+		}
+	},{
+		text:'我是子菜单3',
+		child:[{
+		text:'我还有子菜单~'
+		}]
+	}]
+}])
+```
